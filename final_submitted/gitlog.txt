@@ -1,0 +1,5 @@
+commit 6cee9f025bba8298402c12f8f16cd5c36d4c1dfd
+Author: jaredmeyers <jaredehrenmeyers@gmail.com>
+Date:   Fri Jan 29 18:14:38 2021 -0500
+
+    week2
