@@ -1,0 +1,23 @@
+commit f6fc12d5da1e84d9a5cedecf5f727e985fca87e1
+Author: jaredmeyers <jaredehrenmeyers@gmail.com>
+Date:   Sun Jan 31 22:56:00 2021 -0500
+
+    added word file
+
+commit c5e832a97f09a3c54374a4795a65520970893d3d
+Author: jaredmeyers <jaredehrenmeyers@gmail.com>
+Date:   Sat Jan 30 19:31:47 2021 -0500
+
+    fixed bugs in extra credit
+
+commit 0d247e5933e1be30866a276ca47a0346cfb6cd53
+Author: jaredmeyers <jaredehrenmeyers@gmail.com>
+Date:   Sat Jan 30 18:41:07 2021 -0500
+
+    all files added
+
+commit 6cee9f025bba8298402c12f8f16cd5c36d4c1dfd
+Author: jaredmeyers <jaredehrenmeyers@gmail.com>
+Date:   Fri Jan 29 18:14:38 2021 -0500
+
+    week2
