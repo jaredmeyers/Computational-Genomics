@@ -1,0 +1,19 @@
+Command:
+$printf 'chr2_CM000463.1_1000000-1100000.fasta.gz:\n' ; zgrep -v "^>" chr2_CM000463.1_1000000-1100000.fasta.gz | grep -o "AGCTGGGA\|CGGC\|TAGGTAT" | sort | uniq -c ; printf  'chr2_CM000492.1_1000000-1100000.fasta.gz:\n' ; zgrep -v "^>" chr2_CM000463.1_1000000-1100000.fasta.gz | grep -o "AGCTGGGA\|CGGC\|TAGGTAT" | sort | uniq -c
+
+Output:
+chr2_CM000463.1_1000000-1100000.fasta.gz:
+      9 AGCTGGGA
+     74 CGGC
+      5 TAGGTAT
+chr2_CM000492.1_1000000-1100000.fasta.gz:
+      9 AGCTGGGA
+     74 CGGC
+      5 TAGGTAT
+
+
+This might not have gotten all instances of these specific sequences.
+If sequences are overlapping (such as CGGCGGC), it would only find the first
+	CGGC there.
+
+
