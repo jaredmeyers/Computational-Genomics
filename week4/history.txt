@@ -1,0 +1,32 @@
+python call_samtools_faidx.py chr2_CM000463.1.fasta 1000000 1099999
+python call_samtools_faidx.py chr2_CM000492.1.fasta 1000000 1099999
+
+Single:
+art_illumina -ss HS20 -i chr2_CM000463.1_1000000-1099999.fasta -l 100 -f 10 -o chr2_CM000463.1_1000000-1099999
+art_illumina -ss HS20 -i chr2_CM000492.1_1000000-1099999.fasta -l 100 -f 10 -o chr2_CM000492.1_1000000-1099999
+cat chr2_CM000463.1_1000000-1099999.fq chr2_CM000492.1_1000000-1099999.fq > single.fq
+velveth single51 51 -short -fastq single.fq
+velvetg ./single51
+velveth single21 21 -short -fastq single.fq
+velvetg ./single21/
+
+Paired:
+art_illumina -ss HS20 -i chr2_CM000463.1_1000000-1099999.fasta -p -m 1000 -s 10  -l 100 -f 10 -o chr2_CM000463.1_1000000-1099999
+art_illumina -ss HS20 -i chr2_CM000492.1_1000000-1099999.fasta -p -m 1000 -s 10  -l 100 -f 10 -o chr2_CM000492.1_1000000-1099999
+cat chr2_CM000463.1_1000000-10999991.fq chr2_CM000492.1_1000000-10999991.fq > cat1.fq
+cat chr2_CM000463.1_1000000-10999992.fq chr2_CM000492.1_1000000-10999992.fq > cat2.fq
+velveth k51 51 -fastq -shortPaired -separate cat1.fq cat2.fq 
+velvetg k51/ -ins_length 1000 -exp_cov auto
+velveth k21 21 -fastq -shortPaired -separate cat1.fq cat2.fq 
+velvetg k21/ -ins_length 1000 -exp_cov auto
+
+Dual Paired:
+art_illumina -ss HS20 -i chr2_CM000463.1_1000000-1099999.fasta -p -l 100 -f 10 -m 5000 -s 50 -o chr2_CM000463.1_1000000-1099999.fasta 
+art_illumina -ss HS20 -i chr2_CM000492.1_1000000-1099999.fasta -p -l 100 -f 10 -m 5000 -s 50 -o chr2_CM000492.1_1000000-1099999.fasta
+cat chr2_CM000463.1_1000000-1099999.fasta1.fq chr2_CM000492.1_1000000-1099999.fasta1.fq > cat1.fq
+cat chr2_CM000463.1_1000000-1099999.fasta2.fq chr2_CM000492.1_1000000-1099999.fasta2.fq > cat2.fq
+velveth k51 51 -shortPaired -separate -fastq pairedcat1.fq pairedcat2.fq -shortPaired2 -separate -fastq cat1.fq cat2.fq 
+velvetg k51/ -cov_cutoff auto -exp_cov auto
+velveth k21 21 -shortPaired -separate -fastq pairedcat1.fq pairedcat2.fq -shortPaired2 -separate -fastq cat1.fq cat2.fq 
+velvetg k21/ -cov_cutoff auto -exp_cov auto
+

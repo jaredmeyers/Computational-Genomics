@@ -1,0 +1,17 @@
+Single velvetg k51:
+Final graph has 194 nodes and n50 of 3389, max 13230, total 99753, using 0/20000 reads
+
+Silgle velvetg k21:
+Final graph has 1474 nodes and n50 of 1026, max 3554, total 105692, using 0/20000 reads
+
+Paired k51:
+Final graph has 36 nodes and n50 of 99969, max 99969, total 100887, using 17591/20000 reads
+
+Paired k21:
+Final graph has 154 nodes and n50 of 74689, max 74689, total 99199, using 19565/20000 reads
+
+Dual Paired k51:
+Final graph has 46 nodes and n50 of 99455, max 99455, total 100612, using 35600/40000 reads
+
+Dual Paired k21:
+Final graph has 142 nodes and n50 of 75353, max 75353, total 97930, using 38851/40000 reads
